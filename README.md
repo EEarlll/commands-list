@@ -51,8 +51,6 @@
 | `ctrl A + ctrl K `             | wipe current line terminal                      |
 | `ctrl L`                       | sshortcut clear                                 |
 | `Ctrl Y`                       | recall                                          |
-
-
 | `sudo chown -R $USER:$USER /var/www`    | change ownership of path                               |
 | <code> < cmd return > &#124; grep < pattern ></code> | mode           run command based on return of pipe |
 | `eval $(ssh-agent) && ssh-add <private key>`         | add new identity                                   |
