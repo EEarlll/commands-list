@@ -5,6 +5,7 @@
 - [Basic Vim](#basic-vim)
 - [Ngnix](#ngnix)
 - [Pm2](#pm2)
+- [Git](#git)
 
 # Basic Linux
 | Command                        | Description                                     |
@@ -51,6 +52,8 @@
 | `ctrl A + ctrl K `             | wipe current line terminal                      |
 | `ctrl L`                       | sshortcut clear                                 |
 | `Ctrl Y`                       | recall                                          |
+
+
 | `sudo chown -R $USER:$USER /var/www`    | change ownership of path                               |
 | <code> < cmd return > &#124; grep < pattern ></code> | mode           run command based on return of pipe |
 | `eval $(ssh-agent) && ssh-add <private key>`         | add new identity                                   |
@@ -74,6 +77,7 @@
 | `ESC vap`      | Select all line in paragraph   |
 | `ESC gg`       | Start line                     |
 | `ESC G`        | Last line                      |
+| `ESC ggVG`     | Select All line                |
 | `ESC O`        | New line                       |
 | `ESC a`        | end of current line and insert |
 | `ESC b`        | start of current line          |
@@ -100,3 +104,14 @@
 | `pm2 startup`                | show command to start process           |
 
 
+# Git
+| Commands                           | Description         |
+| ---------------------------------- | ------------------- |
+| `git status `                      | get status of files |
+| `git remote add origin <ssh.git >` | create remote       |
+| `git pull -u origin <branch>`      | get latest          |
+| `git clone <ssh.git>`              | clone repo          |
+| `git add .`                        | add all             |
+| `git commit `                      | commit files        |
+| `git commit -m "<msg>" `           | commit w/ msg files |
+| `git push`                         | push repo           |
