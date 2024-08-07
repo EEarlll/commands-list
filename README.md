@@ -5,6 +5,8 @@
 - [Basic Vim](#basic-vim)
 - [Ngnix](#ngnix)
 - [Pm2](#pm2)
+- [ufw](#ufw)
+- [unattended-Upgrades](#unattended-upgrades)
 - [Git](#git)
 
 # Basic Linux
@@ -35,6 +37,7 @@
 | `ping <domain.com>`            | check status of network                         |
 | `traceroute <domain.com>`      | check all destination of network to domain      |
 | `netstat`                      | see all network process                         |
+| `nmap <ip>`                    | see all open ports                              |
 | `nslookup <domain.com>`        | Look at nameserver for domain                   |
 | `dig <domain.com>`             | look at dns records for domain                  |
 | `apt update`                   | update packages                                 |
@@ -42,7 +45,7 @@
 | `shutdown now -r`              | shutdown current time & restart (1 day default) |
 | `sudo su`                      | run as root                                     |
 | `su earl`                      | run as user                                     |
-| `chmod 644 <file>`             | change permision                                |
+| `chmod 644 <file/dir>`         | chng perm(4,2,1) (owner,group,everyone) (r,w,e) |
 | `adduser <user>`               | add user                                        |
 | `userdel <user>`               | delete user                                     |
 | `usermod -aG <pem>`            | add user in permission (ex sudo )               |
@@ -52,7 +55,6 @@
 | `ctrl A + ctrl K `             | wipe current line terminal                      |
 | `ctrl L`                       | sshortcut clear                                 |
 | `Ctrl Y`                       | recall                                          |
-
 
 | `sudo chown -R $USER:$USER /var/www`    | change ownership of path                               |
 | <code> < cmd return > &#124; grep < pattern ></code> | mode           run command based on return of pipe |
@@ -77,10 +79,17 @@
 | `ESC vap`      | Select all line in paragraph   |
 | `ESC gg`       | Start line                     |
 | `ESC G`        | Last line                      |
-| `ESC ggVG`     | Select All line                |
 | `ESC O`        | New line                       |
 | `ESC a`        | end of current line and insert |
 | `ESC b`        | start of current line          |
+
+copy paste script
+1. Create .vimbuffer
+2. paste in .vimrc
+3. " copy (write) highlighted text to .vimbuffer
+vmap <C-c> y:new ~/.vimbuffer<CR>VGp:x<CR> \| :!cat ~/.vimbuffer \| clip.exe <CR><CR>
+" paste from buffer
+map <C-v> :r ~/.vimbuffer<CR>
 
 
 
@@ -103,15 +112,31 @@
 | `pm2 save`                   | save process / configs                  |
 | `pm2 startup`                | show command to start process           |
 
+# ufw
+| Commands                            | Description           |
+| ----------------------------------- | --------------------- |
+| `sudo ufw status`                   | check if ufw is on    |
+| `sudo ufw allow/deny/reject <port>` | set up rules          |
+| `sudo ufw enable`                   | enable firewall (ufw) |
+| `sudo ufw list`                     | show list of commands |
+
+# unattended-Upgrades
+| Commands                                                   | Description    |
+| ---------------------------------------------------------- | -------------- |
+| `sudo dpgkg-reconfigure --priority=low unattended upgrade` | enable upgrade |
+
 
 # Git
-| Commands                           | Description         |
-| ---------------------------------- | ------------------- |
-| `git status `                      | get status of files |
-| `git remote add origin <ssh.git >` | create remote       |
-| `git pull -u origin <branch>`      | get latest          |
-| `git clone <ssh.git>`              | clone repo          |
-| `git add .`                        | add all             |
-| `git commit `                      | commit files        |
-| `git commit -m "<msg>" `           | commit w/ msg files |
-| `git push`                         | push repo           |
+| Commands                           | Description               |
+| ---------------------------------- | ------------------------- |
+| `git status `                      | get status of files       |
+| `git remote add origin <ssh.git >` | create remote             |
+| `git pull -u origin <branch>`      | get latest                |
+| `git clone <ssh.git>`              | clone repo                |
+| `git add .`                        | add all                   |
+| `git commit `                      | commit files              |
+| `git commit -am "<msg>"`           | commit & add files w/ msg |
+| `git push`                         | push repo                 |
+
+
+
