@@ -1,0 +1,11 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "- [Basic Linux](#basic-linux) - [Basic Vim](#basic-vim) - [Ngnix](#ngnix) - [Pm2](#pm2) - [Git](#git)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
