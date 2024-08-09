@@ -132,8 +132,9 @@ nginx setups
 
 # pm2
 | Commands                     | Description                             |
-| ---------------------------- | --------------------------------------- | 
+| ---------------------------- | --------------------------------------- |
 | `pm2 start <app.js> --watch` | start app without need of terminal open |
+| `pm2 stop <app.js> --watch`  | stop app on pm2                         |
 | `pm2 list`                   | show list of current process            |
 | `pm2 save`                   | save process / configs                  |
 | `pm2 startup`                | show command to start process           |
