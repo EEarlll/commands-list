@@ -133,13 +133,15 @@ nginx setups
 
 
 # pm2
-| Commands                     | Description                             |
-| ---------------------------- | --------------------------------------- |
-| `pm2 start <app.js> --watch` | start app without need of terminal open |
-| `pm2 stop <app.js> --watch`  | stop app on pm2                         |
-| `pm2 list`                   | show list of current process            |
-| `pm2 save`                   | save process / configs                  |
-| `pm2 startup`                | show command to start process           |
+| Commands                         | Description                             |
+| -------------------------------- | --------------------------------------- |
+| `pm2 start <app.js> --watch`     | start app without need of terminal open |
+| `pm2 stop <app.js> --watch`      | stop app on pm2                         |
+| `pm2 list`                       | show list of current process            |
+| `pm2 save`                       | save process / configs                  |
+| `pm2 startup`                    | show command to start process           |
+| `pm2 logs / pm2 logs [app-name]` | output log of pm2                       |
+
 
 # ufw
 | Commands                            | Description           |
@@ -159,6 +161,7 @@ nginx setups
 | --------------------------------------------------------------- | -------------------------- |
 | `**** sh /var/www/app/<file>.sh 2>&1 pipe logger -t <file.sh> ` | log crontab                |
 | `/var/log/<syslog>,<auth.log>,</nginx/accesslog>`               | log file path              |
+| `pm2 logs / pm2 logs [app-name]`                                | output log of pm2          |
 | `tail -f`                                                       | outpat last part w/ follow |
 | `head`                                                          | output first part          |
 | `less`                                                          | output one page at a time  |
@@ -185,5 +188,7 @@ nginx setups
 | `git commit `                        | commit files                                 |
 | `git commit -am "<msg>"`             | commit & add files w/ msg                    |
 | `git push`                           | push repo                                    |
+| `git clear`                          | delete untracked files                       |
+
 
 
