@@ -13,7 +13,7 @@
 ### useful links
 1. [Crontab Made Easy](https://crontab.guru/)
 2. [Markdown Made Easy](https://medium.com/@dipan.saha/markdown-made-easy-unlocking-the-secrets-in-under-5-minutes-519bbc7b8023)
-3. 
+3. [Certbot Https](https://certbot.eff.org/instructions)
 
 # Basic Linux
 | Command                        | Description                                     |
@@ -157,23 +157,24 @@ nginx setups
 | `sudo dpgkg-reconfigure --priority=low unattended upgrade` | enable upgrade |
 
 # Basic Logging
-| Commands                                                        | Description                |
-| --------------------------------------------------------------- | -------------------------- |
-| `**** sh /var/www/app/<file>.sh 2>&1 pipe logger -t <file.sh> ` | log crontab                |
-| `/var/log/<syslog>,<auth.log>,</nginx/accesslog>`               | log file path              |
-| `pm2 logs / pm2 logs [app-name]`                                | output log of pm2          |
-| `tail -f`                                                       | outpat last part w/ follow |
-| `head`                                                          | output first part          |
-| `less`                                                          | output one page at a time  |
-| `cat`                                                           | output entire file         |
-| <code> &#124; <code>                                            | read from stout            |
-| `>`                                                             | write stdout to file       |
-| `>>`                                                            | append stdout to file      |
-| `<`                                                             | read from stdin            |
-| `2>&1`                                                          | redirect both stdin/out    |
-| `find <dir> -type <f/d> -name <(*.ext, file/>`                  | search file name           |
-| `grep -<i/> '<search exp>' <dir>`                               | search file contents       |
-| `zgrep <file> `                                                 | search file contents       |
+| Commands                                                        | Description                       |
+| --------------------------------------------------------------- | --------------------------------- |
+| `**** sh /var/www/app/<file>.sh 2>&1 pipe logger -t <file.sh> ` | log crontab                       |
+| `/var/log/<syslog>,<auth.log>,</nginx/accesslog>`               | log file path                     |
+| `pm2 logs / pm2 logs [app-name]`                                | output log of pm2                 |
+| `cat /etc/os-release`                                           | output ver of os                  |
+| `tail -f`                                                       | outpat last part w/ follow        |
+| `head`                                                          | output first part                 |
+| `less`                                                          | output one page at a time         |
+| `cat`                                                           | output entire file                |
+| <code> &#124; <code>                                            | read from stout                   |
+| `>`                                                             | write stdout to file              |
+| `>>`                                                            | append stdout to file             |
+| `<`                                                             | read from stdin                   |
+| `2>&1`                                                          | redirect both stdin/out           |
+| `find <dir> -type <f/d> -name <(*.ext, file/>`                  | search file name                  |
+| `grep -<i/> '<search exp>' <dir>`                               | search file contents              |
+| `zgrep <file> `                                                 | search file without uncompressing |
 
 
 # Git
