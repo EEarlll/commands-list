@@ -7,4 +7,4 @@ http.createServer(function(req,res){
 }
 ).listen(3001)
 
-console.log("server started on port 3000")
+console.log("server started on port 3001")
