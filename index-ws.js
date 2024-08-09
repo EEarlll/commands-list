@@ -14,6 +14,11 @@ server.listen(PORT, function () {
 });
 
 process.on("SIGNIT", () => {
+  console.log("signit");
+  wss.clients(function each(client) {
+    client.close();
+  });
+
   server.close(() => {
     shutdownDb();
   });

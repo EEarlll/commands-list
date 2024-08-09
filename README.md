@@ -62,6 +62,8 @@
 | `ctrl L`                       | sshortcut clear                                 |
 | `Ctrl Y`                       | recall                                          |
 | `sudo !!`                      | sudo last command                               |
+| `pkill node`                   | Kill all node process if stuck                  |
+
 
 
 | `sudo chown -R $USER:$USER /var/www`    | change ownership of path                               |
