@@ -3,11 +3,17 @@
 
 - [Basic Linux](#basic-linux)
 - [Basic Vim](#basic-vim)
-- [Ngnix](#ngnix)
-- [Pm2](#pm2)
+- [ngnix](#ngnix)
+- [pm2](#pm2)
 - [ufw](#ufw)
-- [unattended-Upgrades](#unattended-upgrades)
+- [unattended-upgrades](#unattended-upgrades)
+- [Basic Logging](#basic-logging)
 - [Git](#git)
+
+### useful links
+1. [Crontab Made Easy](https://crontab.guru/)
+2. [Markdown Made Easy](https://medium.com/@dipan.saha/markdown-made-easy-unlocking-the-secrets-in-under-5-minutes-519bbc7b8023)
+3. 
 
 # Basic Linux
 | Command                        | Description                                     |
@@ -55,6 +61,8 @@
 | `ctrl A + ctrl K `             | wipe current line terminal                      |
 | `ctrl L`                       | sshortcut clear                                 |
 | `Ctrl Y`                       | recall                                          |
+| `sudo !!`                      | sudo last command                               |
+
 
 | `sudo chown -R $USER:$USER /var/www`    | change ownership of path                               |
 | <code> < cmd return > &#124; grep < pattern ></code> | mode           run command based on return of pipe |
@@ -92,21 +100,39 @@ vmap <C-c> y:new ~/.vimbuffer<CR>VGp:x<CR> \| :!cat ~/.vimbuffer \| clip.exe <CR
 map <C-v> :r ~/.vimbuffer<CR>
 
 
+# ngnix 
+| Commands / Filepaths               | Description                       |
+| ---------------------------------- | --------------------------------- |
+| `sudo service nginx start`         | start nginx server                |
+| `sudo service nginx restart`       | restart nginx server              |
+| `sudo ngnix -t `                   | test server configs               |
+| `/var/www/<site> `                 | file path of project              |
+| `/etc/nginx/nginx.conf `           | changed virtual host configs/gzip |
+| `/etc/nginx/sites-enabled/<site> ` | config of project server file     |
 
-# Ngnix 
-| Commands / Filepaths               | Description                   |
-| ---------------------------------- | ----------------------------- |
-| `sudo service nginx start`         | start nginx server            |
-| `sudo service nginx restart`       | restart nginx server          |
-| `sudo ngnix -t `                   | test server configs           |
-| `/var/www/<site> `                 | file path of project          |
-| `/etc/nginx/nginx.conf `           | changed virtual host configs  |
-| `/etc/nginx/sites-enabled/<site> ` | config of project server file |
+nginx setups 
+1. in `/etc/nginx/sites-enabled/<site>` create file and put it in nginx.conf
+2. server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/html;
+        index index.html;
+
+        server_name earleustacio.me; // domain name
+
+        location / {
+                proxy_set_header Upgrade $http_upgrade; // websocket
+                proxy_set_header Connection "upgrade"; // websocket
+                proxy_pass http://127.0.0.1:3000;   // localhost
+        }
+}
+ 3. 
 
 
-# Pm2
+# pm2
 | Commands                     | Description                             |
-| ---------------------------- | --------------------------------------- |
+| ---------------------------- | --------------------------------------- | 
 | `pm2 start <app.js> --watch` | start app without need of terminal open |
 | `pm2 list`                   | show list of current process            |
 | `pm2 save`                   | save process / configs                  |
@@ -120,23 +146,41 @@ map <C-v> :r ~/.vimbuffer<CR>
 | `sudo ufw enable`                   | enable firewall (ufw) |
 | `sudo ufw list`                     | show list of commands |
 
-# unattended-Upgrades
+# unattended-upgrades
 | Commands                                                   | Description    |
 | ---------------------------------------------------------- | -------------- |
 | `sudo dpgkg-reconfigure --priority=low unattended upgrade` | enable upgrade |
 
+# Basic Logging
+| Commands                                                        | Description                |
+| --------------------------------------------------------------- | -------------------------- |
+| `**** sh /var/www/app/<file>.sh 2>&1 pipe logger -t <file.sh> ` | log crontab                |
+| `/var/log/<syslog>,<auth.log>,</nginx/accesslog>`               | log file path              |
+| `tail -f`                                                       | outpat last part w/ follow |
+| `head`                                                          | output first part          |
+| `less`                                                          | output one page at a time  |
+| `cat`                                                           | output entire file         |
+| <code> &#124; <code>                                            | read from stout            |
+| `>`                                                             | write stdout to file       |
+| `>>`                                                            | append stdout to file      |
+| `<`                                                             | read from stdin            |
+| `2>&1`                                                          | redirect both stdin/out    |
+| `find <dir> -type <f/d> -name <(*.ext, file/>`                  | search file name           |
+| `grep -<i/> '<search exp>' <dir>`                               | search file contents       |
+| `zgrep <file> `                                                 | search file contents       |
+
 
 # Git
-| Commands                           | Description               |
-| ---------------------------------- | ------------------------- |
-| `git status `                      | get status of files       |
-| `git remote add origin <ssh.git >` | create remote             |
-| `git pull -u origin <branch>`      | get latest                |
-| `git clone <ssh.git>`              | clone repo                |
-| `git add .`                        | add all                   |
-| `git commit `                      | commit files              |
-| `git commit -am "<msg>"`           | commit & add files w/ msg |
-| `git push`                         | push repo                 |
-
+| Commands                             | Description                                  |
+| ------------------------------------ | -------------------------------------------- |
+| `git status `                        | get status of files                          |
+| `git remote add origin <ssh.git >`   | create remote                                |
+| `git pull -u origin <branch>`        | get latest                                   |
+| `git pull origin <branch> --ff-only` | pull changes that are diff not collide exist |
+| `git clone <ssh.git>`                | clone repo                                   |
+| `git add .`                          | add all                                      |
+| `git commit `                        | commit files                                 |
+| `git commit -am "<msg>"`             | commit & add files w/ msg                    |
+| `git push`                           | push repo                                    |
 
 
