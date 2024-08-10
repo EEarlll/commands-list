@@ -8,6 +8,7 @@
 - [ufw](#ufw)
 - [unattended-upgrades](#unattended-upgrades)
 - [Basic Logging](#basic-logging)
+- [docket](#docket)
 - [Git](#git)
 
 ### useful links
@@ -16,57 +17,55 @@
 3. [Certbot Https](https://certbot.eff.org/instructions)
 
 # Basic Linux
-| Command                        | Description                                     |
-| ------------------------------ | ----------------------------------------------- |
-| `ls`                           | show directory                                  |
-| `ls -la`                       | show directory with permissions                 |
-| `ls -a`                        | show directory with hidden files                |
-| `pwd`                          | print working directory                         |
-| `mkdir <file path>`            | create directory                                |
-| `mkdir -p ./temp/foo/bar.txt`  | create nested directory                         |
-| `rm -rf <dir>`                 | delete directory recursively                    |
-| `cd`                           | set current directory                           |
-| `cd ..`                        | move up current directory                       |
-| `cd ~`                         | navigate to home directory                      |
-| `ctrl + c`                     | exit program                                    |
-| `touch <text.txt>`             | create file                                     |
-| `less <file.txt>`              | print in one line at a time                     |
-| `cat <file.txt>`               | see contents of file                            |
-| `man <command>`                | manual page (q to exit)                         |
-| `clear`                        | clear terminal                                  |
-| `exit`                         | exit current ssh session                        |
-| `echo <text>`                  | print any text                                  |
-| `echo $0 / echo $SHELL`        | print current shell                             |
-| `echo $USER `                  | print username                                  |
-| `openssl <encrpy> <file>`      | encrpy the file with hash                       |
-| `ssh-keygen`                   | Generate a ssh key                              |
-| `ping <domain.com>`            | check status of network                         |
-| `traceroute <domain.com>`      | check all destination of network to domain      |
-| `netstat`                      | see all network process                         |
-| `nmap <ip>`                    | see all open ports                              |
-| `nslookup <domain.com>`        | Look at nameserver for domain                   |
-| `dig <domain.com>`             | look at dns records for domain                  |
-| `apt update`                   | update packages                                 |
-| `apt upgrade`                  | upgrade packages                                |
-| `shutdown now -r`              | shutdown current time & restart (1 day default) |
-| `sudo su`                      | run as root                                     |
-| `su earl`                      | run as user                                     |
-| `chmod 644 <file/dir>`         | chng perm(4,2,1) (owner,group,everyone) (r,w,e) |
-| `adduser <user>`               | add user                                        |
-| `userdel <user>`               | delete user                                     |
-| `usermod -aG <pem>`            | add user in permission (ex sudo )               |
-| `sudo vi /etc/ssh/sshd_config` | edit config of ssh                              |
-| `sudo service ssh restart`     | restart daemon configs                          |
-| `less /etc/passwd`             | show all list of users                          |
-| `ctrl A + ctrl K `             | wipe current line terminal                      |
-| `ctrl L`                       | sshortcut clear                                 |
-| `Ctrl Y`                       | recall                                          |
-| `sudo !!`                      | sudo last command                               |
-| `pkill node`                   | Kill all node process if stuck                  |
-
-
-
-| `sudo chown -R $USER:$USER /var/www`    | change ownership of path                               |
+| Command                                              | Description                                        |
+| ---------------------------------------------------- | -------------------------------------------------- |
+| `ls`                                                 | show directory                                     |
+| `ls -la`                                             | show directory with permissions                    |
+| `ls -a`                                              | show directory with hidden files                   |
+| `pwd`                                                | print working directory                            |
+| `mkdir <file path>`                                  | create directory                                   |
+| `mkdir -p ./temp/foo/bar.txt`                        | create nested directory                            |
+| `rm -rf <dir>`                                       | delete directory recursively                       |
+| `cd`                                                 | set current directory                              |
+| `cd ..`                                              | move up current directory                          |
+| `cd ~`                                               | navigate to home directory                         |
+| `ctrl + c`                                           | exit program                                       |
+| `touch <text.txt>`                                   | create file                                        |
+| `less <file.txt>`                                    | print in one line at a time                        |
+| `cat <file.txt>`                                     | see contents of file                               |
+| `man <command>`                                      | manual page (q to exit)                            |
+| `clear`                                              | clear terminal                                     |
+| `exit`                                               | exit current ssh session                           |
+| `echo <text>`                                        | print any text                                     |
+| `echo $0 / echo $SHELL`                              | print current shell                                |
+| `echo $USER `                                        | print username                                     |
+| `openssl <encrpy> <file>`                            | encrpy the file with hash                          |
+| `ssh-keygen`                                         | Generate a ssh key                                 |
+| `ping <domain.com>`                                  | check status of network                            |
+| `traceroute <domain.com>`                            | check all destination of network to domain         |
+| `netstat`                                            | see all network process                            |
+| `nmap <ip>`                                          | see all open ports                                 |
+| `nslookup <domain.com>`                              | Look at nameserver for domain                      |
+| `dig <domain.com>`                                   | look at dns records for domain                     |
+| `apt update`                                         | update packages                                    |
+| `apt upgrade`                                        | upgrade packages                                   |
+| `shutdown now -r`                                    | shutdown current time & restart (1 day default)    |
+| `sudo su`                                            | run as root                                        |
+| `su earl`                                            | run as user                                        |
+| `chmod 644 <file/dir>`                               | chng perm(4,2,1) (owner,group,everyone) (r,w,e)    |
+| `adduser <user>`                                     | add user                                           |
+| `userdel <user>`                                     | delete user                                        |
+| `usermod -aG <pem>`                                  | add user in permission (ex sudo )                  |
+| `sudo vi /etc/ssh/sshd_config`                       | edit config of ssh                                 |
+| `sudo service ssh restart`                           | restart daemon configs                             |
+| `less /etc/passwd`                                   | show all list of users                             |
+| `ctrl A + ctrl K `                                   | wipe current line terminal                         |
+| `ctrl L`                                             | sshortcut clear                                    |
+| `Ctrl Y`                                             | recall                                             |
+| `sudo !!`                                            | sudo last command                                  |
+| `pkill node`                                         | Kill all node process if stuck                     |
+| `htop`                                               | view all running process in os                     |
+| `sudo chown -R $USER:$USER /var/www`                 | change ownership of path                           |
 | <code> < cmd return > &#124; grep < pattern ></code> | mode           run command based on return of pipe |
 | `eval $(ssh-agent) && ssh-add <private key>`         | add new identity                                   |
 
@@ -118,18 +117,19 @@ nginx setups
         listen 80 default_server;
         listen [::]:80 default_server;
 
-        root /var/www/html;
-        index index.html;
-
         server_name earleustacio.me; // domain name
+        access_log /var/log/nginx/access.log upstreamlog // log balancer script 
 
         location / {
                 proxy_set_header Upgrade $http_upgrade; // websocket
                 proxy_set_header Connection "upgrade"; // websocket
-                proxy_pass http://127.0.0.1:3000;   // localhost
+                proxy_pass http://127.0.0.1:3000;   // localhost or loadbalancer
         }
 }
- 3. 
+Load Balancer script log on nginxconf
+`log_format upstreamlog '[$time_local] $remote_addr - $remote_user - $server_name $host to: $upstream_addr: $request $status upstream_response_time $upstream_response_time msec $msec request_time $request_time';
+  `
+
 
 
 # pm2
@@ -175,6 +175,25 @@ nginx setups
 | `find <dir> -type <f/d> -name <(*.ext, file/>`                  | search file name                  |
 | `grep -<i/> '<search exp>' <dir>`                               | search file contents              |
 | `zgrep <file> `                                                 | search file without uncompressing |
+
+
+# docket
+| Commands                                                                        | Description                             |
+| ------------------------------------------------------------------------------- | --------------------------------------- |
+| `FROM <os>`                                                                     | what type of os running                 |
+| `RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app` | create a dir for node & change perms    |
+| `WORKDIR /home/node/app`                                                        | change work dir                         |
+| `COPY --chown=node:node package*.json ./`                                       | copy package json in the directory      |
+| `USER node`                                                                     | set user to node                        |
+| `RUN npm i`                                                                     | run npm i from the earlier copy package |
+| `COPY --chown=node:node . .`                                                    | copy everything from the directory      |
+| `EXPOSE 3000`                                                                   | expose port                             |
+| `CMD ["node", <app.js>]`                                                        | run command                             |
+| `sudo docker build -t <name> .`                                                 | build docker image  from cur dir        |
+| `sudo docker run -d -p <out port>:<in port> <imagename>`                        | run docker -d(background) -p(port)      |
+| `sudo docker ps`                                                                | view all running docker                 |
+| `sudo docker image ls `                                                         | view  dir of docker image               |
+
 
 
 # Git
