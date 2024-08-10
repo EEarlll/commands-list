@@ -63,13 +63,16 @@
 | `ctrl L`                                               | sshortcut clear                                    |
 | `Ctrl Y`                                               | recall                                             |
 | `sudo !!`                                              | sudo last command                                  |
-| `pkill node`                                           | Kill all node process if stuck                     |
+| `pkill node / killall node`                            | Kill all node process if stuck                     |
 | `htop`                                                 | view all running process in os                     |
 | `sudo chown -R $USER:$USER /var/www`                   | change ownership of path                           |
 | <code> < cmd return > &#124; grep < pattern ></code>   | mode           run command based on return of pipe |
 | `eval $(ssh-agent) && ssh-add <private key>`           | add new identity                                   |
 | `curl -m 2 <endpoint>/?q=<param>`                      | http get request -m(timeout)                       |
 | `curl --data "param1=value1&param2=value2" <endpoint>` | http post request                                  |
+| `sudo lsof -i :<Port>`                                 | view open port at                                  |
+| `kill -9 <PID>`                                        | kill port at PID                                   |
+
 
 
 
