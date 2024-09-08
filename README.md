@@ -231,7 +231,7 @@ Iphone 7 IOS 15.8.3 using palera1n linux & baroque ramdisk
 6. install sileo and update packages
 7. download newterm (might need to add new repo to work) 
 8. sudo passwd root
-9. ssh mobile@<wifiAddress>
+9. ssh mobile@wifiaddress
 10. mount -o rw,union,update /
 11. rm -rf /Applications/Setup.app
 12. uicache -a
