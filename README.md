@@ -214,8 +214,26 @@ Load Balancer script log on nginxconf
 | `git commit -am "<msg>"`             | commit & add files w/ msg                    |
 | `git push`                           | push repo                                    |
 | `git clear`                          | delete untracked files                       |
-| `gh create repo`                     | create repo                                  |
+| `gh repo create <name>`              | create repo                                  |
+| `gh repo rename <name>`              | rename repo                                  |
 
 
+Node
+npm link
+"bin": { "<cli>" : "./index.js"}
+#!/usr/bin/env node
 
+Iphone 7 IOS 15.8.3 using palera1n linux & baroque ramdisk
+1. download baroque ramdisk windows 11
+2. sudo palera1n -c -f 
+3. follow instruction
+4. sudo plaera1n -f 
+5. install sileo and update packages
+6. download newterm (might need to add new repo to work) 
+7. sudo passwd root
+8. ssh mobile@<wifiAddress>
+9. mount -o rw,union,update /
+10. rm -rf /Applications/Setup.app
+11. uicache -a
+12. killall backboardd
 
