@@ -227,13 +227,13 @@ Iphone 7 IOS 15.8.3 using palera1n linux & baroque ramdisk
 1. download baroque ramdisk windows 11
 2. sudo palera1n -c -f 
 3. follow instruction
-4. sudo plaera1n -f 
-5. install sileo and update packages
-6. download newterm (might need to add new repo to work) 
-7. sudo passwd root
-8. ssh mobile@<wifiAddress>
-9. mount -o rw,union,update /
-10. rm -rf /Applications/Setup.app
-11. uicache -a
-12. killall backboardd
+4. sudo plaera1n -f and bypass icloud in baroque ramdisk
+6. install sileo and update packages
+7. download newterm (might need to add new repo to work) 
+8. sudo passwd root
+9. ssh mobile@<wifiAddress>
+10. mount -o rw,union,update /
+11. rm -rf /Applications/Setup.app
+12. uicache -a
+13. killall backboardd
 
